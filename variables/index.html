@@ -148,7 +148,14 @@
     
         
             <li class="toctree-l1 ">
-                <a class="" href="../release">15. Inception 发布日志</a>
+                <a class="" href="../queryprint">15. Inception 语法树打印</a>
+            </li>
+        
+
+    
+        
+            <li class="toctree-l1 ">
+                <a class="" href="../release">16. Inception 发布日志</a>
             </li>
         
 
@@ -449,6 +456,12 @@
 <td align="left">ON/OFF</td>
 <td align="center">OFF</td>
 <td align="left">设置当前Inception服务器是不是只读的，这是为了防止一些人具有修改权限的帐号时，通过Inception误修改一些数据，如果inception_read_only设置为ON，则即使开了enable-execute，同时又有执行权限，也不会去执行，审核完成即返回</td>
+</tr>
+<tr>
+<td align="left">inception_check_identifier</td>
+<td align="left">ON/OFF</td>
+<td align="center">ON</td>
+<td align="left">打开与关闭Inception对SQL语句中各种名字的检查，如果设置为ON，则如果发现名字中存在除数字、字母、下划线之外的字符时，会报Identifier "invalidname" is invalid, valid options: [a-z,A-Z,0-9,_].</td>
 </tr>
 </tbody>
 </table>

@@ -148,7 +148,14 @@
     
         
             <li class="toctree-l1 ">
-                <a class="" href="../release">15. Inception 发布日志</a>
+                <a class="" href="../queryprint">15. Inception 语法树打印</a>
+            </li>
+        
+
+    
+        
+            <li class="toctree-l1 ">
+                <a class="" href="../release">16. Inception 发布日志</a>
             </li>
         
 
@@ -199,7 +206,11 @@ CREATE TABLE adaptive_office(id int);
 inception_magic_commit;
 </code></pre>
 
-<p>那么上面这一段就是一批正常可以执行的SQL语句，目前执行只执行通过C/C++接口、Python接口来对Inception访问，这一段必须是一次性的通过执行接口提交给Inception，那么在处理完成之后，Inception会返回一个结果集，来告诉我们这些语句中存在什么错误，或者是完全正常等等。  </p>
+<hr />
+<p><strong>注意：下面说明非常重要，请认真看</strong><br />
+那么上面这一段就是一批正常可以执行的SQL语句，目前执行<strong>只支持通过C/C++接口、Python接口来对Inception访问</strong>，这一段必须是<strong>一次性</strong>的通过执行接口提交给Inception，那么在处理完成之后，Inception会返回一个结果集，来告诉我们这些语句中存在什么错误，或者是完全正常等等。  </p>
+<p>请不要将下面的SQL语句块，放到MySQL客户端中执行，因为这是一个自动化运维工具，如果使用交互式的命令行来使用的话没有意义，只能是通过写程序来访问Inception服务器。</p>
+<p>而可以通过MySQL客户端来执行的，只有是Inception命令，请参考&lt;&lt;<strong>inception命令集语句</strong>&gt;&gt;一节。</p>
 <p>下面是一段执行上面语句的Python程序的例子：</p>
 <hr />
 <pre><code class="python">\#!/usr/bin/python

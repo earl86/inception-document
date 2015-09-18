@@ -148,7 +148,14 @@
     
         
             <li class="toctree-l1 ">
-                <a class="" href="../release">15. Inception 发布日志</a>
+                <a class="" href="../queryprint">15. Inception 语法树打印</a>
+            </li>
+        
+
+    
+        
+            <li class="toctree-l1 ">
+                <a class="" href="../release">16. Inception 发布日志</a>
             </li>
         
 
@@ -191,7 +198,7 @@
 <li><code>inception_remote_system_password //上面用户的密码</code>  </li>
 </ul>
 <p>这些参数可以直接在命令行中指定，也可以用<strong>--defaults-file</strong>指定一个<strong>my.cnf</strong>文件，一经指定，再不能更改，除非将服务器关闭，修改之后再次启动。文件中指定这几个参数的值，用法与mysql是相同的。
-另外：为了使备份成为一个可选功能，增加一个是不是备份的参数<strong>--enable-remote--backup</strong>(在前面&lt;&lt;<strong>Inception支持选项及意义</strong>&gt;&gt;一章中已经介绍过)，如果开启则不做备份操作，都是直接执行，另外还有一点，执行时被影响的表如果没有主键的话，就不会做备份了，这样更简单并且备份时间及数据都会少一点，不然回滚语句的WHERE条件就会将所有列写进去，这样会影响性能且没有太大意义，所以在WHERE条件中，只需要主键即可。</p>
+另外：为了使备份成为一个可选功能，增加一个是不是备份的参数<strong>--enable-remote-backup</strong>(在前面&lt;&lt;<strong>Inception支持选项及意义</strong>&gt;&gt;一章中已经介绍过)，如果开启则不做备份操作，都是直接执行，另外还有一点，执行时被影响的表如果没有主键的话，就不会做备份了，这样更简单并且备份时间及数据都会少一点，不然回滚语句的WHERE条件就会将所有列写进去，这样会影响性能且没有太大意义，所以在WHERE条件中，只需要主键即可。</p>
 <p>通过上面参数设置的Inception备份用户必须要具备下面的权限才能成功备份的，包括：CREATE、INSERT。CREATE权限用于创建表或者库的，INSERT权限用于插入备份数据的，其它的权限不需要（也许是暂时的）。</p>
 <p>备份数据在备份机器的存储，是与线上被修改库一对一的。但因为机器的多（线上机器有很多）对一（备份机器只有一台），所以为了防止库名的冲突，备份机器的库名组成是由线上机器的 IP 地址的点换成下划线，再加上端口号，再加上库名三部分，这三部分也是通过下划线连接起来的。例如：<code>192_168_1_1_3310_inceptiondb</code>，下面用 inceptiondb 举例为线上库名。</p>
 <p>针对一个备份库，里面的表与对应线上表都是一一对应的，也就是说线上库inceptiondb中有什么表，在备份库<code>192_168_1_1_3310_inceptiondb</code>中就有什么表，表名也完全相同，不同的只是表中的列不同而已，它是用来存储所有对这个表修改的回滚语句的, 对应的表包括的列主要有下面两个：<br />

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>15. Inception 发布日志 - Inception使用规范及说明文档</title>
+  <title>16. Inception 发布日志 - Inception使用规范及说明文档</title>
   
 
   
@@ -147,8 +147,15 @@
 
     
         
+            <li class="toctree-l1 ">
+                <a class="" href="../queryprint">15. Inception 语法树打印</a>
+            </li>
+        
+
+    
+        
             <li class="toctree-l1 current">
-                <a class="current" href=".">15. Inception 发布日志</a>
+                <a class="current" href=".">16. Inception 发布日志</a>
             </li>
         
 
@@ -173,7 +180,7 @@
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="..">Docs</a> &raquo;</li>
-    <li>15. Inception 发布日志</li>
+    <li>16. Inception 发布日志</li>
       <li class="wy-breadcrumbs-aside">
         
       </li>
@@ -183,6 +190,20 @@
           <div role="main">
             <div class="section">
               <h1 id="_1">发布日志</h1>
+<h3 id="2015918inception219">2015年9月18日Inception2.1.9发布</h3>
+<ol>
+<li>[<strong>新增</strong>]新增参数inception_check_identifier</li>
+<li>[<strong>新增</strong>]加入打印执行计划的功能</li>
+<li>修改在打印及审核表达式时字符串溢出导致内存覆盖的问题</li>
+<li>修改在多个加列并且有AFTER的时候，代码变量没有重置导致检查失败的问题</li>
+<li>对增删改查语句中的表达式检查的重构，不会漏掉一个表达式，检查更彻底，在Inception中一个比较遗憾的工作终于搞定了。</li>
+<li>修改Inception在启动的时候，错误的加载了非Inception配置文件组导致启动不成功的问题</li>
+<li>修改对时间类型默认值的检查，不考虑线上sql_mode值，只要是非法的时间值，都报警,时间类型包括所有的DATE、DATETIME、TIMESTAMP，默认值包括INT，STRING及DECIMAL等</li>
+<li>修改在处理sqlmode时代码错误导致系统崩溃的问题</li>
+<li>修改在回滚语句很长时，回滚表对应的字段为TEXT，导致语句被截断的问题，已经修改为Medium类型的TEXT。</li>
+<li>修改在生成回滚语句时，当主键不在第一个列时导致生成的语句存在语法错误的问题。</li>
+<li>废弃参数inception_ddl_support，请更新之后，不要再使用，已经不起作用了（之前手册也没有出现过，可以忽略）</li>
+</ol>
 <h3 id="2015828inception2018-beta">2015年8月28日Inception2.0.18-beta发布</h3>
 <ol>
 <li>修改在binlogformat已经是ROW的情况下，还去设置，导致有些没有super权限时出错的问题</li>
@@ -219,7 +240,7 @@
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="../statistic" class="btn btn-neutral" title="14. Inception 的统计功能"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../queryprint" class="btn btn-neutral" title="15. Inception 语法树打印"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -245,7 +266,7 @@
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
         
-      <span><a href="../statistic" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span><a href="../queryprint" style="color: #fcfcfc;">&laquo; Previous</a></span>
       <span style="margin-left: 15px"><a href="" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
