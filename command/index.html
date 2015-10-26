@@ -252,6 +252,24 @@ read_rnd_buffer_size | 262144
 <img alt="" src="../inception_images/osc.png" /></p>
 <p>上面是正在做的，而如果语句块中有多个修改表的操作，则前面的会看到执行完成的进度信息：
 <img alt="" src="../inception_images/osccomplete.png" /></p>
+<h3 id="processlist">查看当前processlist</h3>
+<p>inception还可以查看当前正在执行的所有线程信息，语法为：</p>
+<pre><code>inception get processlist;
+</code></pre>
+
+<p><img alt="" src="../inception_images/processlist.png" />
+当前命令执行之后，返回的结果信息如上图所示，每一个列介绍如下：</p>
+<ol>
+<li>id:一个简单的计数。</li>
+<li>dest_user:表示当前执行语句访问数据库时所用的用户名。</li>
+<li>dest_host:表示当前执行语句要访问的数据库地址。</li>
+<li>dest_port:表示当前执行语句要访问的数据库的端口。</li>
+<li>from_host:表示当前执行语句是从机器上发起的。</li>
+<li>command:表示当前执行的是什么操作，包括CHECK（简单审核），EXECUTE（执行），SPLIT（拆分），PRINT（打印计划树），LOCAL（本地命令）。</li>
+<li>state:表示在当前命令下，执行的状态是什么，状态包括INIT（初始阶段），CHECKING（正在审核），EXECUTING（正在执行），DEINIT（退出），BACKUP（正在备份）。</li>
+<li>time:表示当前语句执行所用时间。</li>
+<li>info:显示当前正在执行的语句。</li>
+</ol>
 
             </div>
           </div>

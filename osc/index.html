@@ -277,6 +277,12 @@
 <td align="left">对应参数--max-load中的thread_running部分</td>
 </tr>
 <tr>
+<td align="left">inception_osc_recursion_method</td>
+<td align="left">SESSION</td>
+<td align="left">processlist</td>
+<td align="left">对应OSC参数recursion_method，具体意义可以参考OSC官方手册</td>
+</tr>
+<tr>
 <td align="left">inception_osc_min_table_size</td>
 <td align="left">SESSION</td>
 <td align="left">16</td>
@@ -357,6 +363,13 @@
 2. 在取消语句的错误描述信息中，报错为<code>"Execute has been abort in percent: 已执行比例, remain time: 剩余时间"</code><br />
 3. 在取消之后，当前语句之后的所有语句不会执行，当然状态为未执行。<br />
 4. 被取消语句，在取消之后，结果集stagestatus列的信息会设置为<code>"Execute Aborted"</code>。  </p>
+<h2 id="osc_3">查看所有OSC执行信息</h2>
+<p>语句如下：</p>
+<pre><code>inception get osc processlist;
+</code></pre>
+
+<p>这个语句的功能是打印所有当前正在使用OSC执行的操作，如果在同一个inception请求中有多个ALTER语句，那么显示出来的有可能存在执行进度为100%的语句，通过这个语句，可以轻松查看当前每一个OSC执行进度，如果是卡住了（比如存在从库复制延迟），在这里可以看到具体信息。</p>
+<p>实际上看到的信息和上面<code>inception get osc_percent '当前执行的SQL语句以及一些基本信息生成的SHA1哈希值'</code>返回的结果是一样的，只是这个返回了所有信息。</p>
 <h2 id="_1">后记</h2>
 <p><strong>需要注意的是</strong>，OSC全局参数最好别频繁修改，因为针对某一个语句的SHA1是分阶段的，生成是在审核阶段的，如果在审核时候没有打开，或者设置的表大小没有满足OSC方式，则不会生成SHA1，那么在执行时候，这个进度就不能被查询了，这个语句的执行情况就不能获取到，影响执行过程的体验。当然这个影响也不大，因为在执行完成之后，如果执行成功了，并且参数<code>inception_osc_print_none</code>为OFF，则会看到打印信息，里面包括成功或者失败的所有信息，而如果为ON，则如果结果集中有信息，则说明是执行错误了，如果没有则说明成功。</p>
 
