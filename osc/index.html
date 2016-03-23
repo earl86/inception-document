@@ -259,6 +259,18 @@
 <td align="left">对应参数--[no]drop-old-table</td>
 </tr>
 <tr>
+<td align="left">inception_osc_check_replication_filters</td>
+<td align="left">SESSION</td>
+<td align="left">1</td>
+<td align="left">对应参数--[no]check-replication-filters</td>
+</tr>
+<tr>
+<td align="left">inception_osc_check_alter</td>
+<td align="left">SESSION</td>
+<td align="left">1</td>
+<td align="left">对应参数--[no]check-alter</td>
+</tr>
+<tr>
 <td align="left">inception_osc_max_lag</td>
 <td align="left">SESSION</td>
 <td align="left">3</td>
@@ -281,6 +293,12 @@
 <td align="left">SESSION</td>
 <td align="left">processlist</td>
 <td align="left">对应OSC参数recursion_method，具体意义可以参考OSC官方手册</td>
+</tr>
+<tr>
+<td align="left">inception_osc_alter_foreign_keys_method</td>
+<td align="left">SESSION</td>
+<td align="left">none</td>
+<td align="left">对应OSC参数alter-foreign-keys-method，具体意义可以参考OSC官方手册</td>
 </tr>
 <tr>
 <td align="left">inception_osc_min_table_size</td>
@@ -352,7 +370,7 @@
 <p>当进入执行阶段之后，在执行当前语句时，OSC会向inception返回进度信息，Inception在收到之后，会根据当前语句的SHA1值更新对应的进度信息，OSC会每百分之一返回一次进度信息，那Inception都会更新当前语句对应的进度信息，OSC不会返回100%，最大99%，而Inception做了处理，当检查到有successfully altered的信息之后，就将进度信息改为100%，剩余时间为00:00，而99%到100%之间做的事情包括清除环境的操作，所以时间可能比之前的1%的时间要长。</p>
 <p>进度信息缓存有生命周期的，在整个语句块执行完成在退出前，相应的缓存信息就会被清除出去，之后再查询进度就查不到了。查不到的话，当前线程的阻塞也就返回了，说明已经完成。</p>
 <h2 id="osc_2">中止OSC的执行</h2>
-<p>在执行OSC的过程中，有可能遇到的问题是，执行一部分了，突然发现对线上造成了MDL等待的现象，这种影响对一些业务是不可接受的，因为很多语句此时就不能执行当前表上面的任何操作了，必须要等OSC的一些辅助操作（建立/删除触发器）完成之后才可以，而OSC的这些操作又是在等待线上的一些慢查询语句执行完成才能继续执行下去，这种情况下，我们一般的处理方式是，先退出OSC执行，等在压力小的时候，或者可以多试几次，才可以继续执行下去，那么此时最需要DBA操作的就是取消当前这个OSC的执行，但在当前Inception还不支持这个，所以这个问题处理起来比较不方便，如果发现问题，还需要去线上Kill执行，效率以及友好性都不太好。所以考虑实现一个取消（中止）OSC执行的功能。</p>
+<p>在执行OSC的过程中，有可能遇到的问题是，执行一部分了，突然发现对线上造成了MDL等待的现象，这种影响对一些业务是不可接受的，因为很多语句此时就不能执行当前表上面的任何操作了，必须要等OSC的一些辅助操作（建立/删除触发器）完成之后才可以，而OSC的这些操作又是在等待线上的一些慢查询语句执行完成才能继续执行下去，这种情况下，我们一般的处理方式是，先退出OSC执行，等在压力小的时候，或者可以多试几次，才可以继续执行下去，那么此时最需要DBA操作的就是取消当前这个OSC的执行，所以考虑实现一个取消（中止）OSC执行的功能。</p>
 <p>取消方式与查询执行进度是一样的，还是通过一个新的Inception命令来实现，新的命令如下：</p>
 <pre><code>inception stop alter '当前执行的SQL语句以及一些基本信息生成的SHA1哈希值'
 </code></pre>
