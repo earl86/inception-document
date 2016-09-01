@@ -19,3 +19,4 @@ pages:
  - [statistic.md, '14. Inception 的统计功能']
  - [queryprint.md, '15. Inception 语法树打印']
  - [release.md, '16. Inception 发布日志']
+ - [users.md, '17. Inception 使用企业']
