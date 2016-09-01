@@ -3,10 +3,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
   
   <title>13. Inception 对OSC的支持 - Inception使用规范及说明文档</title>
   
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
 
   
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
@@ -15,16 +20,20 @@
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../css/highlight.css">
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "13. Inception 对OSC的支持";
+    var mkdocs_page_input_path = "osc.md";
+    var mkdocs_page_url = "/osc/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
   <script type="text/javascript" src="../js/highlight.pack.js"></script>
-  <script src="../js/theme.js"></script>
+  <script src="../js/theme.js"></script> 
 
-  <style>
-    body {font-size: 90%;}
-    pre, code {font-size: 100%;}
-    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
-  </style> 
+  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,133 +44,167 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
         <a href=".." class="icon icon-home"> Inception使用规范及说明文档</a>
-        
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-      <ul class="current">
-    
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Inception使用规范及说明文档</a>
         
-            <li class="toctree-l1 ">
-                <a class="" href="../chapter1">Inception序</a>
-            </li>
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../chapter1/">Inception序</a>
         
-
-    
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../source/">1. Inception 是如何诞生的</a>
         
-            <li class="toctree-l1 ">
-                <a class="" href="../source">1. Inception 是如何诞生的</a>
-            </li>
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../inception/">2. Inception 总述及体系结构</a>
         
-
-    
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">3. Inception 安装说明</a>
         
-            <li class="toctree-l1 ">
-                <a class="" href="../inception">2. Inception 总述及体系结构</a>
-            </li>
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../usage/">4. Inception 使用方法</a>
         
-
-    
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../option/">5. Inception 支持选项及意义</a>
         
-            <li class="toctree-l1 ">
-                <a class="" href="../install">3. Inception 安装说明</a>
-            </li>
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../backup/">6. Inception 备份功能说明</a>
         
-
-    
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../rules/">7. Inception 审核规范及原则</a>
         
-            <li class="toctree-l1 ">
-                <a class="" href="../usage">4. Inception 使用方法</a>
-            </li>
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../variables/">8. Inception所支持的参数变量</a>
         
-
-    
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../results/">9. Inception结果集</a>
         
-            <li class="toctree-l1 ">
-                <a class="" href="../option">5. Inception 支持选项及意义</a>
-            </li>
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../command/">10. Inception命令集</a>
         
-
-    
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../requires/">11. Inception 对线上配置需求</a>
         
-            <li class="toctree-l1 ">
-                <a class="" href="../backup">6. Inception 备份功能说明</a>
-            </li>
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../extras/">12. Inception 额外功能说明</a>
         
-
-    
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">13. Inception 对OSC的支持</a>
         
-            <li class="toctree-l1 ">
-                <a class="" href="../rules">7. Inception 审核规范及原则</a>
-            </li>
+            <ul>
+            
+                <li class="toctree-l3"><a href="#inception-osc">Inception 对OSC的支持</a></li>
+                
+                    <li><a class="toctree-l4" href="#osc">可选的OSC参数</a></li>
+                
+                    <li><a class="toctree-l4" href="#osc_1">查看OSC执行进度</a></li>
+                
+                    <li><a class="toctree-l4" href="#osc_2">中止OSC的执行</a></li>
+                
+                    <li><a class="toctree-l4" href="#osc_3">查看所有OSC执行信息</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">后记</a></li>
+                
+            
+            </ul>
         
-
-    
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../statistic/">14. Inception 的统计功能</a>
         
-            <li class="toctree-l1 ">
-                <a class="" href="../variables">8. Inception所支持的参数变量</a>
-            </li>
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../queryprint/">15. Inception 语法树打印</a>
         
-
-    
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../release/">16. Inception 发布日志</a>
         
-            <li class="toctree-l1 ">
-                <a class="" href="../results">9. Inception结果集</a>
-            </li>
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../users/">17. Inception 使用企业</a>
         
-
-    
-        
-            <li class="toctree-l1 ">
-                <a class="" href="../command">10. Inception命令集</a>
-            </li>
-        
-
-    
-        
-            <li class="toctree-l1 ">
-                <a class="" href="../requires">11. Inception 对线上配置需求</a>
-            </li>
-        
-
-    
-        
-            <li class="toctree-l1 ">
-                <a class="" href="../extras">12. Inception 额外功能说明</a>
-            </li>
-        
-
-    
-        
-            <li class="toctree-l1 current">
-                <a class="current" href=".">13. Inception 对OSC的支持</a>
-            </li>
-        
-
-    
-        
-            <li class="toctree-l1 ">
-                <a class="" href="../statistic">14. Inception 的统计功能</a>
-            </li>
-        
-
-    
-        
-            <li class="toctree-l1 ">
-                <a class="" href="../queryprint">15. Inception 语法树打印</a>
-            </li>
-        
-
-    
-        
-            <li class="toctree-l1 ">
-                <a class="" href="../release">16. Inception 发布日志</a>
-            </li>
-        
-
-    
-</ul>
-
+    </li>
+<li>
+          
+        </ul>
       </div>
       &nbsp;
     </nav>
@@ -170,8 +213,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
-        <a href=".."></a>
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Inception使用规范及说明文档</a>
       </nav>
 
       
@@ -180,16 +223,20 @@
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
     <li>13. Inception 对OSC的支持</li>
-      <li class="wy-breadcrumbs-aside">
-        
-      </li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
   </ul>
   <hr/>
 </div>
           <div role="main">
             <div class="section">
-              <h1 id="inception-osc">Inception 对OSC的支持</h1>
+              
+                <h1 id="inception-osc">Inception 对OSC的支持</h1>
 <p>Inception已经支持Percon ToolKit工具<strong><code>pt-online-schema-change</code></strong>，这样对表大表的修改操作，就不需要跳过Inception而手动去执行了，给线上操作又带来了非常大的方便性。  </p>
 <h2 id="osc">可选的OSC参数</h2>
 <p>为了更友好的实现对OSC的集成，增加了下面的一些参数：  </p>
@@ -390,17 +437,17 @@
 <p>实际上看到的信息和上面<code>inception get osc_percent '当前执行的SQL语句以及一些基本信息生成的SHA1哈希值'</code>返回的结果是一样的，只是这个返回了所有信息。</p>
 <h2 id="_1">后记</h2>
 <p><strong>需要注意的是</strong>，OSC全局参数最好别频繁修改，因为针对某一个语句的SHA1是分阶段的，生成是在审核阶段的，如果在审核时候没有打开，或者设置的表大小没有满足OSC方式，则不会生成SHA1，那么在执行时候，这个进度就不能被查询了，这个语句的执行情况就不能获取到，影响执行过程的体验。当然这个影响也不大，因为在执行完成之后，如果执行成功了，并且参数<code>inception_osc_print_none</code>为OFF，则会看到打印信息，里面包括成功或者失败的所有信息，而如果为ON，则如果结果集中有信息，则说明是执行错误了，如果没有则说明成功。</p>
-
+              
             </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../statistic" class="btn btn-neutral float-right" title="14. Inception 的统计功能"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../statistic/" class="btn btn-neutral float-right" title="14. Inception 的统计功能">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../extras" class="btn btn-neutral" title="12. Inception 额外功能说明"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../extras/" class="btn btn-neutral" title="12. Inception 额外功能说明"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -408,9 +455,8 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>
     <!-- Copyright etc -->
-    </p>
+    
   </div>
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
@@ -425,10 +471,15 @@
 
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
-        
-      <span><a href="../extras" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="../statistic" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+      
+        <span><a href="../extras/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../statistic/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
     </span>
 </div>
+
 </body>
 </html>
