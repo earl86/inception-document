@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>10. Inception命令集 - Inception使用规范及说明文档</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "10. Inception命令集";
+    var mkdocs_page_input_path = "command.md";
+    var mkdocs_page_url = "/command/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Inception使用规范及说明文档</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Inception使用规范及说明文档</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../chapter1/">Inception序</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../source/">1. Inception 是如何诞生的</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../inception/">2. Inception 总述及体系结构</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">3. Inception 安装说明</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../usage/">4. Inception 使用方法</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../option/">5. Inception 支持选项及意义</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../backup/">6. Inception 备份功能说明</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../rules/">7. Inception 审核规范及原则</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../variables/">8. Inception所支持的参数变量</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../results/">9. Inception结果集</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">10. Inception命令集</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#inception">Inception命令集语句</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">显示远程变量</a></li>
+                
+                    <li><a class="toctree-l4" href="#_2">显示本地全部变量</a></li>
+                
+                    <li><a class="toctree-l4" href="#_3">显示本地某个变量</a></li>
+                
+                    <li><a class="toctree-l4" href="#_4">设置本地变量</a></li>
+                
+                    <li><a class="toctree-l4" href="#osc">显示OSC执行进度</a></li>
+                
+                    <li><a class="toctree-l4" href="#processlist">查看当前processlist</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../requires/">11. Inception 对线上配置需求</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../extras/">12. Inception 额外功能说明</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../osc/">13. Inception 对OSC的支持</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../statistic/">14. Inception 的统计功能</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../queryprint/">15. Inception 语法树打印</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../release/">16. Inception 发布日志</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../users/">17. Inception 使用企业</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Inception使用规范及说明文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>10. Inception命令集</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="inception">Inception命令集语句</h1>
+<p>Inception命令是一个Inception所支持的一系列命令集，为了与原MySQL的命令区分，在命令前面使用Inception这个新的关键字。</p>
+<p>这个命令集包括的功能有：打印线上服务器的一些信息，支持所有show命令，只要在原来show命令前面加上inception即可，返回的结果集放在上面所述结果集的SQL列中，前面是当前执行的inception命令，以冒号分隔，后面接着是执行show命令得到的结果集，每行以换行符分隔，一行中的不同列的数据，以竖线“|”分隔。此外还包括上面设置或查看相关参数的三个命令，这三个命令只能通过MySQL客户端或者编程直接执行，而不需要加上数据源、标记语句等信息。因为它是对Inception本身进行操作的。</p>
+<p>下面列举一下共包括哪几类：</p>
+<h3 id="_1">显示远程变量</h3>
+<p>这种情况，语法为<code>inception {MySQL支持的原生的show命令};</code>，比如</p>
+<pre><code>inception show tables;
+inception show variables like &quot;%read_only%&quot;;
+</code></pre>
+
+<p>其实这个命令就是用来方便得通过Inception工具来查看线上的某些状态或者变量等信息的，返回的结果会放在后面将要介绍的&lt;&lt;<strong>Inception结果集</strong>&gt;&gt;中所说的结果集的SQL列中的。具体输出格式是，最前面还是输出执行的inception命令，然后以冒号分隔，冒号后面接着是执行show命令得到的结果集，每行以换行符分隔，一行中的不同列的数据，以竖线“|”分隔。
+比如对于命令  </p>
+<pre><code>/*--user=zhufeng;--password=xxxxxxxxxxx;--host=xxxxxxxxxx;
+--enable-check;--port=3456;*/  
+inception_magic_start;  
+use mysql;  
+inception show variables like &quot;read%&quot;;
+inception_magic_commit;
+</code></pre>
+
+<p>返回结果如下：  </p>
+<pre><code>qunar show variables like &quot;read%&quot;:      
+read_buffer_size | 33554432         
+read_only | OFF         
+read_rnd_buffer_size | 262144
+</code></pre>
+
+<p><strong>注意</strong>：因为查看远程变量，是需要连到远程数据库服务器的，所以执行时还是必须要加上前面的数据源信息的，不然在MySQL客户只支持这个语句会报错。
+<img alt="" src="../inception_images/showerr.png" />
+这个就是在提醒，必须要放在<code>inception_magic_start</code>及<code>inception_magic_commit</code>语句中才能执行。</p>
+<h3 id="_2">显示本地全部变量</h3>
+<p>显示本地全部变量，就是查看Inception本身所有参数的值，语法非常简单：</p>
+<pre><code>inception get variables;
+</code></pre>
+
+<p>输出就是所有的变量，下图所示为部分变量：
+<img alt="" src="../inception_images/variables.png" />
+<strong>注意</strong>，这个命令只显示Inception本身的一些参数变量的值，那么是不需要数据源信息的，所以它是可以直接在MySQL客户端执行的。</p>
+<h3 id="_3">显示本地某个变量</h3>
+<p>显示本地某个变量，和上面唯一的区别是，这只显示一个变量的值，而上面是显示全部，语法：</p>
+<pre><code>inception get variables 'variable_name';
+</code></pre>
+
+<p>下面是图例：
+<img alt="" src="../inception_images/onevar.png" /></p>
+<p><strong>注意</strong>，这个命令只显示Inception本身的一些参数变量的值，那么是不需要数据源信息的，所以它是可以直接在MySQL客户端执行的，而如果放在数据源信息中执行的话，这样的语句会被忽略，不会做任何处理。</p>
+<h3 id="_4">设置本地变量</h3>
+<p>Inception不仅可以查看它的参数值，还可以通过语句动态设置某个参数的值，因为Inception的参数（除部分OSC参数，具体参见&lt;&lt;<strong>Inception所支持的参数变量</strong>&gt;&gt;）是全局的，并且不是会话级别的，所以它是设置之后马上生效的，而有些OSC的参数是会话的，则只影响当前执行的连接。语法为：</p>
+<pre><code>inception set [session] variables_name=value;
+</code></pre>
+
+<p><strong>注意</strong>，这个命令只显示Inception本身的一些参数变量的值，那么是不需要数据源信息的，所以它是可以直接在MySQL客户端执行的，而如果放在数据源信息中执行的话，这样的语句会被忽略，不会做任何处理。
+下面是图例：
+<img alt="" src="../inception_images/oscset.png" /></p>
+<h3 id="osc">显示OSC执行进度</h3>
+<p>这个语句的作用是，当某一个ALTER TABLE语句正在通过Inception使用OSC执行时，可以通过这个语句来查询执行的进度度信息，语法：</p>
+<pre><code>inception get osc_percent '当前执行的SQL语句以及一些基本信息生成的SHA1哈希值';
+</code></pre>
+
+<p>具体的细节会在后面专门的一章&lt;&lt;<strong>Inception 对OSC的支持</strong>&gt;&gt;中讲述，这里只看一下图例：
+<img alt="" src="../inception_images/osc.png" /></p>
+<p>上面是正在做的，而如果语句块中有多个修改表的操作，则前面的会看到执行完成的进度信息：
+<img alt="" src="../inception_images/osccomplete.png" /></p>
+<h3 id="processlist">查看当前processlist</h3>
+<p>inception还可以查看当前正在执行的所有线程信息，语法为：</p>
+<pre><code>inception get processlist;
+</code></pre>
+
+<p><img alt="" src="../inception_images/processlist.png" />
+当前命令执行之后，返回的结果信息如上图所示，每一个列介绍如下：</p>
+<ol>
+<li>id:一个简单的计数。</li>
+<li>dest_user:表示当前执行语句访问数据库时所用的用户名。</li>
+<li>dest_host:表示当前执行语句要访问的数据库地址。</li>
+<li>dest_port:表示当前执行语句要访问的数据库的端口。</li>
+<li>from_host:表示当前执行语句是从机器上发起的。</li>
+<li>command:表示当前执行的是什么操作，包括CHECK（简单审核），EXECUTE（执行），SPLIT（拆分），PRINT（打印计划树），LOCAL（本地命令）。</li>
+<li>state:表示在当前命令下，执行的状态是什么，状态包括INIT（初始阶段），CHECKING（正在审核），EXECUTING（正在执行），DEINIT（退出），BACKUP（正在备份）。</li>
+<li>time:表示当前语句执行所用时间。</li>
+<li>info:显示当前正在执行的语句。</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../requires/" class="btn btn-neutral float-right" title="11. Inception 对线上配置需求">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../results/" class="btn btn-neutral" title="9. Inception结果集"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../results/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../requires/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
