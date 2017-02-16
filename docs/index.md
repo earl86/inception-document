@@ -12,12 +12,12 @@ Inception是一个开源系统，每个人或者每个公司都可以自由使�
 Inception开源GitHub地址：  
 [https://github.com/mysql-inception/inception.git](https://github.com/mysql-inception/inception.git)
 
+#Inception作者
+- 王竹峰 
+- 高岩 
+- 强昌金 
+
 #联系方式
 **邮箱**：doathink@gmail.com  
 Inception讨论QQ群：185803996
-
-#Inception作者
-王竹峰  
-高岩  
-强昌金  
 
