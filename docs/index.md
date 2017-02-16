@@ -13,6 +13,11 @@ Inception开源GitHub地址：
 [https://github.com/mysql-inception/inception.git](https://github.com/mysql-inception/inception.git)
 
 #联系方式
-王竹峰  
 **邮箱**：doathink@gmail.com  
 Inception讨论QQ群：185803996
+
+#Inception作者
+王竹峰  
+高岩  
+强昌金  
+
